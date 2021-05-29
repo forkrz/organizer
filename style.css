@@ -23,6 +23,7 @@
     height: 100%;
     display: table;
     float: left;
+    letter-spacing: 3px;
 }
 
 .logo_container h1 {
@@ -67,4 +68,12 @@
 
 .main {
     background-color: gray;
+    height: 450px
+}
+
+i {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    padding-right: 5px;
 }
