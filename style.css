@@ -110,8 +110,9 @@ div p {
     font-weight: 100;
     text-align: center;
     margin: 1rem;
-    line-height: 3rem;
+    line-height: 5rem;
     font-size: 1.5rem;
+    margin: 0 2rem;
 }
 
 .slider {
@@ -119,21 +120,23 @@ div p {
     margin-top: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider h1 {
-    margin-top: 0;
+    display: flex;
     color: white;
     background-color: #111111;
-    display: block;
     width: 100%;
-    text-align: center;
+    align-self: center;
     flex-basis: 100%;
+    height: 6rem;
 }
 
 .carousel {
     position: relative;
-    height: 100px;
+    height: 40rem;
     overflow: hidden;
     width: 100%;
 }
