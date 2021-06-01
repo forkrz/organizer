@@ -6,6 +6,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    background-color: #111111;
 }
 
 .header {
@@ -117,7 +118,6 @@ div p {
 
 .slider {
     width: 100%;
-    margin-top: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -132,6 +132,7 @@ div p {
     align-self: center;
     flex-basis: 100%;
     height: 6rem;
+    margin-bottom: 0;
 }
 
 .carousel {
@@ -148,7 +149,7 @@ div p {
     transition: all 0.3s;
 }
 
-.slider-elements section {
+.slider-elements div {
     flex-basis: 100%;
     display: flex;
     justify-content: center;
@@ -165,12 +166,54 @@ div p {
     position: absolute;
     top: 50%;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
 .arrow.left {
     left: 10px;
+    color: white;
 }
 
 .arrow.right {
     right: 10px;
+    color: white;
+}
+
+.controls ul {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%);
+}
+
+.controls ul li {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #333;
+    margin: 1rem;
+    border-radius: 1rem;
+    background: black;
+    cursor: pointer;
+}
+
+.controls ul li:hover {
+    background: white;
+    transition: 0.5s;
+}
+
+.controls ul li.selected {
+    background: white;
+}
+
+.arrow .material-icons {
+    font-size: 4rem;
+}
+
+.arrow .material-icons:hover {
+    color: gray;
+    transition: 0.5s;
 }
