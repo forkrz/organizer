@@ -231,7 +231,7 @@ html {
 }
 
 .box {
-    width: 20rem;
+    width: 40rem;
     padding: 3rem;
     position: absolute;
     background-color: #111111;
@@ -243,7 +243,8 @@ html {
 }
 
 .box input[type="text"],
-.box input[type="password"] {
+.box input[type="password"],
+.box input[type="email"] {
     border: 0;
     background: none;
     display: block;
@@ -251,7 +252,7 @@ html {
     text-align: center;
     border: 2px solid gray;
     padding: 14px 10px;
-    width: 10rem;
+    width: 15rem;
     outline: none;
     color: white;
     border-radius: 24px;
@@ -262,12 +263,14 @@ html {
     color: white;
     text-transform: uppercase;
     font-weight: 400;
+    letter-spacing: 1rem;
 }
 
 .box input[type="text"]:focus,
-.box input[type="password"]:focus {
+.box input[type="password"]:focus,
+.box input[type="email"]:focus {
     border: 2px solid white;
-    width: 15rem;
+    width: 20rem;
 }
 
 .box input[type="submit"] {
