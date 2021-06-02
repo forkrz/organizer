@@ -216,3 +216,77 @@ div p {
     color: gray;
     transition: 0.5s;
 }
+
+
+/* LOGIN FORM */
+
+html {
+    height: 100%;
+    background-color: #111111;
+}
+
+.login-form {
+    width: 100%;
+    background-color: #111111;
+}
+
+.box {
+    width: 20rem;
+    padding: 3rem;
+    position: absolute;
+    background-color: #111111;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid gray;
+    padding: 14px 10px;
+    width: 10rem;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    border: 2px solid white;
+    width: 15rem;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid gray;
+    padding: 14px 10px;
+    width: 10rem;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+    border-color: white;
+    background-color: rgba(0, 100, 0, 0.685);
+}
