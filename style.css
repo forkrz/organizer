@@ -6,7 +6,6 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    background-color: #111111;
 }
 
 .header {
@@ -122,12 +121,12 @@ div p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: #111111;
 }
 
 .slider h1 {
     display: flex;
     color: white;
-    background-color: #111111;
     width: 100%;
     align-self: center;
     flex-basis: 100%;
