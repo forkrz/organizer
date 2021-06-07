@@ -293,3 +293,17 @@ html {
     border-color: white;
     background-color: rgba(0, 100, 0, 0.685);
 }
+
+div.registerInformation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40rem;
+}
+
+p.registerInformation {
+    border: 0.3rem solid white;
+    width: 50rem;
+    color: white;
+    padding: 2rem;
+}
