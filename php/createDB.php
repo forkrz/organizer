@@ -2,20 +2,33 @@
 
 declare(strict_types=1);
 
-require_once("../php/database.php");
+require_once("../database.php");
 
 class CreateDB
 {
-    function __construct($db, $rp)
+    function __construct($db)
     {
         $this->db = $db;
-        $this->rp = $rp;
     }
-    public function registerUser()
+    public function createUser()
     {
-        $registerArray = $this->rp->registerArray();
-        $query = "INSERT INTO USERS (LOGIN,EMAIL,PASSWORD) VALUES (?, ? , ?)";
+        $query = "INSERT INTO USERS 
+            SET 
+            user_login=:user_login, email=:email, user_password=:user_password";
+
         $stmt = $this->db->con->prepare($query);
-        $stmt->execute([$registerArray['username'], $registerArray['email'], $registerArray['password']]);
+
+        $this->user_login = htmlspecialchars(strip_tags($this->user_login));
+        $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->user_password = htmlspecialchars(strip_tags($this->user_password));
+
+        $stmt->bindParam(':user_login', $this->user_login);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":user_password", $this->user_password);
+
+        if ($stmt->execute()) {
+            return True;
+        }
+        return FALSE;
     }
 }
