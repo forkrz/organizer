@@ -35,8 +35,7 @@
             </div>
         </div>
         <div class="register-form">
-
-            <form class="box" method="POST" id="registerform">
+            <form class="box" id="registerform">
                 <h1>Register</h1>
                 <input type="text" name="username" id="username" placeholder="username">
                 <input type="email" name="email" id="email" placeholder="email">
@@ -47,33 +46,7 @@
         </div>
     </div>
 </body>
-<script>
-    const form = document.getElementById('registerform');
-
-
-    function sendData(e) {
-        e.preventDefault();
-        const data = {
-            user_login: document.getElementById('username').value,
-            email: document.getElementById('email').value,
-            user_password: document.getElementById('password').value,
-        };
-        console.log(document.getElementById('username').value);
-        fetch('http://org.localhost/php/api/create.php', {
-                method: "post",
-                headers: {
-                    "Content-type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(res => {
-                console.log("Dodałem użytkownika:");
-                console.log(res);
-            })
-    }
-
-    form.addEventListener('submit', sendData);
+<script src="js/handlers.js" type="module">
 </script>
 
 </html>
