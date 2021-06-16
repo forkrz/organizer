@@ -16,7 +16,7 @@
 }
 
 .inner_header {
-    width: 1200px;
+    width: 100rem;
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -214,7 +214,7 @@ div p {
 
 .arrow .material-icons:hover {
     color: gray;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 
@@ -274,7 +274,7 @@ html {
 }
 
 .box input[type="submit"] {
-    border: 0;
+    border: none;
     background: none;
     display: block;
     margin: 20px auto;
@@ -306,4 +306,11 @@ p.registerInformation {
     width: 50rem;
     color: white;
     padding: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
