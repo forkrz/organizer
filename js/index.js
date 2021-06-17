@@ -7,6 +7,7 @@ const indicatorParents = document.querySelector('.controls ul');
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.navigation');
 
+let isMenuOpen = nav.classList.contains('navigation_open');
 
 
 // let sectionIndex = 0;
@@ -47,7 +48,20 @@ const nav = document.querySelector('.navigation');
 
 function hamburgerDisplay() {
     nav.classList.toggle('navigation_open');
+    isMenuOpen = !isMenuOpen
 }
 
 hamburger.addEventListener("click", hamburgerDisplay)
     //window.onload = changeImg();
+
+
+
+function hideMenu() {
+    console.log(isMenuOpen);
+    if (isMenuOpen) {
+        nav.classList.remove("navigation_open");
+        isMenuOpen = !isMenuOpen
+    }
+}
+
+document.addEventListener('click', hideMenu);
