@@ -20,6 +20,9 @@ body {
     justify-content: space-between;
     padding: 1rem 2rem;
     overflow: hidden;
+    @media only screen and (max-width: 400px) {
+        padding-left: 0.5rem;
+    }
 }
 
 .logo_container {
@@ -29,6 +32,9 @@ body {
     align-self: center;
     @media only screen and (max-width: 550px) {
         font-size: 1rem;
+    }
+    @media only screen and (max-width: 400px) {
+        font-size: 0.7rem;
     }
 }
 
@@ -40,7 +46,7 @@ body {
     display: flex;
     overflow: hidden;
     @media only screen and (max-width: 850px) {
-        top: 10%;
+        top: 4.5rem;
         width: 100%;
         position: fixed;
         right: -100%;
@@ -98,9 +104,12 @@ body {
     @media only screen and (max-width: 850px) {
         display: flex;
     }
+    @media only screen and (max-width: 400px) {
+        padding-left: 0.3rem;
+    }
 }
 
 .hamburger_button {
     align-self: center;
-    margin-right: 1rem;
+    margin-left: 1rem;
 }

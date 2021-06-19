@@ -27,6 +27,12 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 400px) {
+  .header {
+    padding-left: 0.5rem;
+  }
+}
+
 .logo_container {
   color: white;
   font-family: "MONTSERRAT";
@@ -39,6 +45,12 @@ body {
 @media only screen and (max-width: 550px) {
   .logo_container {
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .logo_container {
+    font-size: 0.7rem;
   }
 }
 
@@ -55,7 +67,7 @@ body {
 
 @media only screen and (max-width: 850px) {
   .navigation {
-    top: 10%;
+    top: 4.5rem;
     width: 100%;
     position: fixed;
     right: -100%;
@@ -144,10 +156,16 @@ body {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  .hamburger {
+    padding-left: 0.3rem;
+  }
+}
+
 .hamburger_button {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 /*# sourceMappingURL=index.css.map */

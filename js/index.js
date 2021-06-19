@@ -51,17 +51,29 @@ function hamburgerDisplay() {
     isMenuOpen = !isMenuOpen
 }
 
-hamburger.addEventListener("click", hamburgerDisplay)
-    //window.onload = changeImg();
+
+//window.onload = changeImg();
 
 
 
 function hideMenu() {
-    console.log(isMenuOpen);
     if (isMenuOpen) {
         nav.classList.remove("navigation_open");
         isMenuOpen = !isMenuOpen
     }
 }
 
-document.addEventListener('click', hideMenu);
+const toggleMenu = (e) => {
+    if (['button', 'i'].includes(e.target.tagName.toLowerCase())) {
+        nav.classList.toggle('navigation_open')
+        isMenuOpen = !isMenuOpen
+        console.log(e)
+    } else {
+        if (isMenuOpen) {
+            nav.classList.remove('navigation_open')
+            isMenuOpen = false
+        }
+    }
+}
+
+document.addEventListener('click', toggleMenu);
