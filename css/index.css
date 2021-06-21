@@ -104,12 +104,17 @@ body {
   .navigation_list_element a {
     padding: 1rem 3rem;
     background-color: #111111;
-    border: 0.3rem solid gray;
-    margin-bottom: 0.3rem;
+    border-bottom: 0.3rem solid gray;
     width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .navigation_list_element.first a {
+    border-top: 0.3rem solid gray;
   }
 }
 
@@ -423,6 +428,12 @@ body {
 
 .slider-logos {
   width: 15%;
+}
+
+@media only screen and (max-width: 850px) {
+  .slider-logos {
+    width: 30%;
+  }
 }
 
 .controls ul {
