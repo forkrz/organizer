@@ -43,7 +43,7 @@ function changeImg() {
     document.querySelector('.controls .selected').classList.remove('selected');
     indicatorParents.children[sectionIndex].classList.add('selected');
     slider.style.transform = 'translate(' + (sectionIndex) * -25 + '%)';
-    setTimeout("changeImg()", 2000);
+    setTimeout("changeImg()", 5000);
 }
 
 function hamburgerDisplay() {
@@ -77,13 +77,26 @@ const toggleMenu = (e) => {
 }
 
 
+
 let touchstartX = 0;
 let touchendX = 0;
 
 
 function handleGesture() {
-    if (touchendX < touchstartX) alert('swiped left!');
-    if (touchendX > touchstartX) alert('swiped right!');
+    if (touchendX < touchstartX) {
+
+        sectionIndex = (sectionIndex < 3) ? sectionIndex + 1 : 0;
+        document.querySelector('.controls .selected').classList.remove('selected');
+        indicatorParents.children[sectionIndex].classList.add('selected');
+        slider.style.transform = 'translate(' + (sectionIndex) * -25 + '%)';
+
+    };
+    if (touchendX > touchstartX) {
+        sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 3;
+        document.querySelector('.controls .selected').classList.remove('selected');
+        indicatorParents.children[sectionIndex].classList.add('selected');
+        slider.style.transform = 'translate(' + (sectionIndex) * -25 + '%)';
+    };
 }
 
 slider.addEventListener('touchstart', e => {

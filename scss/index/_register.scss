@@ -1,0 +1,41 @@
+.register-form {
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111111;
+}
+
+div.registerInformation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p.registerInformation {
+    border: 0.3rem solid white;
+    width: 50rem;
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.box.invalid input[type="text"]:focus,
+.box.invalid input[type="email"]:focus,
+.box.invalid input[type="password"]:focus {
+    border: 0.3rem solid rgb(139, 22, 22);
+}
+
+.errorInfo {
+    color: rgb(139, 22, 22);
+}
+
+.hide {
+    display: none;
+}

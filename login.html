@@ -11,36 +11,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="header">
-            <div class="inner_header">
-                <div class="logo_container">
-                    <h1>FORNAL<span>IZER</span></h1>
-                </div>
-                <ul class="navigation">
-                    <a href="index.html">
-                        <li><i class="material-icons">home</i> Home</li>
-                    </a>
-                    <a href="login.html">
-                        <li><i class="material-icons">login</i>Login</li>
-                    </a>
-                    <a href="register.html">
-                        <li><i class="material-icons">assignment_turned_in</i>Register</li>
-                    </a>
-                </ul>
-            </div>
+    <header class="header">
+        <div class="logo_container">
+            <h1>FORNAL<span>IZER</span></h1>
         </div>
-        <div class="login-form">
-            <form action="login.html" class="box" method="POST">
-                <h1>Login</h1>
-                <input type="text" name="" placeholder="username">
-                <input type="password" name="" placeholder="password">
-                <input type="submit" name="" value="login">
-        </div>
+        <ul class="navigation">
+            <li class="navigation_list_element first">
+                <a href="index.html">
+                    <i class="material-icons nav_list">home</i>
+                </a>
+            </li>
+            <li class="navigation_list_element">
+                <a href="login.html">
+                    <i class="material-icons nav_list">login</i>
+                </a>
+            </li>
+            <li class="navigation_list_element">
+                <a href="register.html">
+                    <i class="material-icons nav_list">assignment_turned_in</i>
+                </a>
+            </li>
+
+        </ul>
+        <button class="hamburger">
+                <i class="material-icons hamburger_button">menu</i>
+            </button>
+    </header>
+    <div class="login-form">
+        <form action="login.html" class="box" method="POST">
+            <h1>Login</h1>
+            <input type="text" name="" placeholder="username">
+            <input type="password" name="" placeholder="password">
+            <input type="submit" name="" value="login">
         </form>
     </div>
 </body>

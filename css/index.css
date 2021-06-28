@@ -480,4 +480,139 @@ body {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
+
+.register-form {
+  width: 100vw;
+  height: 92vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #111111;
+}
+
+div.registerInformation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+p.registerInformation {
+  border: 0.3rem solid white;
+  width: 50rem;
+  color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.box.invalid input[type="text"]:focus,
+.box.invalid input[type="email"]:focus,
+.box.invalid input[type="password"]:focus {
+  border: 0.3rem solid #8b1616;
+}
+
+.errorInfo {
+  color: #8b1616;
+}
+
+.hide {
+  display: none;
+}
+
+.login-form {
+  width: 100vw;
+  background-color: #111111;
+  display: block;
+  height: 92.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box {
+  width: 40rem;
+  background-color: #111111;
+  color: white;
+  text-align: center;
+}
+
+.box input[type="text"],
+.box input[type="password"],
+.box input[type="email"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid gray;
+  padding: 14px 10px;
+  width: 15rem;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  font-family: 'MONTSERRAT', sans-serif;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus,
+.box input[type="email"]:focus {
+  border: 2px solid white;
+  width: 20rem;
+}
+
+.box input[type="submit"] {
+  border: none;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid gray;
+  padding: 14px 10px;
+  width: 10rem;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  border-color: white;
+  background-color: rgba(0, 100, 0, 0.685);
+}
 /*# sourceMappingURL=index.css.map */
