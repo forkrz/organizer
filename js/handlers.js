@@ -10,12 +10,6 @@ const errorInfoEmail = document.getElementById('errorInfoEmail');
 const errorInfoPassword = document.getElementById('errorInfoPassword');
 const errorInfoConfirmPassword = document.getElementById('errorInfoConfirmPassword');
 
-const data = {
-    user_login: document.getElementById('username').value,
-    email: document.getElementById('email').value,
-    user_password: document.getElementById('password').value,
-}
-
 function loginLengthCheck() {
     if (login.value.length > 5 && login.value.length < 17) {
         return true;
@@ -213,10 +207,13 @@ function RegisterFormTotalDataCheck(e) {
 
 function sendData(e) {
     e.preventDefault();
-    if (!RegisterFormTotalDataCheck) {
-        console.log(document.getElementById('username'));
-    } else {
-        console.log(data.value);
+    if (RegisterFormTotalDataCheck) {
+        const data = {
+            user_login: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            user_password: document.getElementById('password').value,
+            user_confirm_password: document.getElementById('confirm_password').value
+        }
         fetch('http://org.localhost/php/api/create.php', {
             method: "post",
             headers: {
