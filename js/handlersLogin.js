@@ -1,14 +1,8 @@
 const login = document.getElementById('username');
-const email = document.getElementById('email');
 const password = document.getElementById('password');
-const password_confirm = document.getElementById('confirm_password');
-const submitButton = document.getElementById('submit');
-const box = document.getElementById('registerform');
-
+const box = document.getElementById('loginform');
 const errorInfoLogin = document.getElementById('errorInfoLogin');
-const errorInfoEmail = document.getElementById('errorInfoEmail');
-const errorInfoPassword = document.getElementById('errorInfoPassword');
-const errorInfoConfirmPassword = document.getElementById('errorInfoConfirmPassword');
+const submitButton = document.getElementById('submit');
 
 function loginLengthCheck() {
     if (login.value.length > 5 && login.value.length < 17) {
@@ -42,33 +36,7 @@ function loginVisualValidation() {
 
 }
 
-
-
 login.addEventListener('keyup', loginVisualValidation);
-
-
-
-function emailFormatCheck() {
-    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;;
-    return regex.test(email.value);
-
-}
-
-function emailVisualValidation() {
-    let emailFormat = emailFormatCheck();
-
-    if (emailFormat == true) {
-        box.classList.remove('invalid');
-        errorInfoEmail.classList.add('hide');
-        return true;
-    } else {
-        box.classList.add('invalid');
-        errorInfoEmail.classList.remove('hide');
-    }
-}
-
-
-email.addEventListener('keyup', emailVisualValidation);
 
 function errorMinLengthPasswordCommunicate() {
     if (password.value.length < 8) {
@@ -174,45 +142,21 @@ function passwordVisualValidation() {
 
 password.addEventListener('keyup', passwordVisualValidation);
 
-
-function passwordMatchCheck() {
-    if (passwordVisualValidation() == true) {
-        return (password.value == password_confirm.value)
-    }
-    return false;
-}
-
-function confirmPasswordVisualValidation() {
-    if (passwordMatchCheck() == true) {
-        box.classList.remove('invalid');
-        errorInfoConfirmPassword.classList.add('hide');
-        return true;
-    } else {
-        box.classList.add('invalid');
-        errorInfoConfirmPassword.classList.remove('hide');
-    }
-}
-
-password_confirm.addEventListener('keyup', confirmPasswordVisualValidation);
-
-function RegisterFormTotalDataCheck(e) {
+function LoginformTotalDataCheck(e) {
     e.preventDefault();
     if (loginVisualValidation() &&
-        emailVisualValidation() &&
-        passwordVisualValidation() &&
-        confirmPasswordVisualValidation()) {
+        passwordVisualValidation()) {
         return true;
     }
 }
 
 function sendData(e) {
     e.preventDefault();
-    if (RegisterFormTotalDataCheck) {
+    if (LoginformTotalDataCheck) {
         const data = {
             user_login: document.getElementById('username').value,
-            email: document.getElementById('email').value,
             user_password: document.getElementById('password').value,
-            user_confirm_password: document.getElementById('confirm_password').value
+
         }
         fetch('http://org.localhost/php/api/create.php', {
             method: "post",
@@ -221,7 +165,6 @@ function sendData(e) {
             },
             body: JSON.stringify(data)
         }).then(res => res.json()).then(res => {
-            console.log("Dodałem użytkownika:");
             console.log(res);
         })
     }

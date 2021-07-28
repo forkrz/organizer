@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+
+
 require_once("../database.php");
 
 class CreateDB
@@ -21,6 +23,7 @@ class CreateDB
         $this->user_login = htmlspecialchars(strip_tags($this->user_login));
         $this->email = htmlspecialchars(strip_tags($this->email));
         $this->user_password = htmlspecialchars(strip_tags($this->user_password));
+        $this->user_password = password_hash($this->user_password, PASSWORD_DEFAULT);
 
         $stmt->bindParam(':user_login', $this->user_login);
         $stmt->bindParam(":email", $this->email);

@@ -483,7 +483,7 @@ body {
 
 .register-form {
   width: 100vw;
-  height: 92vh;
+  height: 90.5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -542,7 +542,7 @@ p.registerInformation {
   width: 100vw;
   background-color: #111111;
   display: block;
-  height: 92.5vh;
+  height: 90.5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

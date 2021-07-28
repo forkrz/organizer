@@ -42,13 +42,17 @@
             </button>
     </header>
     <div class="login-form">
-        <form action="login.html" class="box" method="POST">
+        <form class="box" id="loginform">
             <h1>Login</h1>
-            <input type="text" name="" placeholder="username">
-            <input type="password" name="" placeholder="password">
-            <input type="submit" name="" value="login">
+            <input type="text" name="" id="username" placeholder="username">
+            <div class="errorInfo hide" id="errorInfoLogin"> Login must have at least 6 characters</div>
+            <input type="password" name="" id="password" placeholder="password">
+            <div class="errorInfo hide" id="errorInfoPassword"> Password must have at least 8 characters</div>
+            <input type="submit" name="" value="login" id="submit">
+            <div class="errorInfo hide" id="errorData"> Password or login are incorrect</div>
         </form>
     </div>
 </body>
+<script src="js/handlersLogin.js" type="module"></script>
 
 </html>
