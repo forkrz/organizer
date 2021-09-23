@@ -6,6 +6,8 @@ require_once("../createDB.php");
 require_once('../dataValidation.php');
 require_once('../Dbdatacheck.php');
 require_once('../api/apiHandler.php');
+require_once('../sendgrid/mailSender.php');
+require_once('../sendgrid/mailMessages.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -14,10 +16,13 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 $db = new Database($config);
-$createDb = new CreateDB($db);
-$dv = new DataValidation();
 $dbdc = new DBDataCheck($db);
+$createDb = new CreateDB($db, $dbdc);
+$dv = new DataValidation();
 $ah = new apiHandler();
+$mmsgs = new MailMessages();
+
+$ms = new mailSender();
 
 $data = json_decode(file_get_contents("php://input"));
 
@@ -56,11 +61,13 @@ if ($dv->RegisterDataTotalCheck($createDb->user_login, $createDb->email, $create
     exit();
 }
 
+$mailHash = md5(uniqid($data->user_login, true));
 
-
-if ($createDb->createUser()) {
+if ($createDb->createUser($mailHash)) {
+    $ms->sendMail($mmsgs->mailText($mailHash)['register']['header'], $data->email, $data->user_login, $mmsgs->mailText($mailHash)['register']['content']);
     http_response_code(201);
     echo json_encode(array("message" => "account has been created."));
+    exit();
 } else {
     http_response_code(503);
     echo json_encode(array("message" => "Unable to create account."));

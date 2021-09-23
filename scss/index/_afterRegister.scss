@@ -1,0 +1,23 @@
+.registerInformation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90.5vh;
+    background-color: #111111;
+}
+
+p.registerInformation {
+    text-align: center;
+    border: 0.3rem solid white;
+    width: 50rem;
+    color: white;
+    height: 40.5vh;
+    font-family: 'MONTSERRAT', sans-serif;
+    font-size: 2rem;
+    @media only screen and (max-width: 700px) {
+        font-size: 1.5rem;
+    }
+    @media only screen and (max-width: 400px) {
+        font-size: 1rem;
+    }
+}

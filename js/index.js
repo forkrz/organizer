@@ -4,12 +4,6 @@ const leftArrow = document.querySelector('.left');
 const rightArrow = document.querySelector('.right');
 const indicatorParents = document.querySelector('.controls ul');
 
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('.navigation');
-
-let isMenuOpen = nav.classList.contains('navigation_open');
-
-
 let sectionIndex = 0;
 
 document.querySelectorAll('.controls li').forEach(function(indicator, ind) {
@@ -46,35 +40,10 @@ function changeImg() {
     setTimeout("changeImg()", 5000);
 }
 
-function hamburgerDisplay() {
-    nav.classList.toggle('navigation_open');
-    isMenuOpen = !isMenuOpen
-}
+
 
 
 window.onload = changeImg();
-
-
-
-function hideMenu() {
-    if (isMenuOpen) {
-        nav.classList.remove("navigation_open");
-        isMenuOpen = !isMenuOpen
-    }
-}
-
-const toggleMenu = (e) => {
-    if (['button', 'i'].includes(e.target.tagName.toLowerCase())) {
-        nav.classList.toggle('navigation_open')
-        isMenuOpen = !isMenuOpen
-        console.log(e)
-    } else {
-        if (isMenuOpen) {
-            nav.classList.remove('navigation_open')
-            isMenuOpen = false
-        }
-    }
-}
 
 
 
@@ -107,6 +76,3 @@ slider.addEventListener('touchend', e => {
     touchendX = e.changedTouches[0].screenX;
     handleGesture();
 });
-
-
-document.addEventListener('click', toggleMenu);

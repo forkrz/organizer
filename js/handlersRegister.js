@@ -210,6 +210,7 @@ function RegisterFormTotalDataCheck() {
 
 
 const postData = async(x) => {
+
     const resp = await fetch('http://org.localhost/php/api/create.php', {
         method: "post",
         headers: {
@@ -217,13 +218,16 @@ const postData = async(x) => {
         },
         body: JSON.stringify(x)
     });
+
     return resp.json();
+
 }
 
 function ApiComunnicatesHandler(resp) {
+    console.log(resp)
     if (resp == "Login or email already exists in database.") {
-        errorInfoConfirmPassword.classList.remove('hide');
-        errorInfoDbCheck.innerHTML(resp)
+        errorInfoDbCheck.classList.remove('hide');
+        errorInfoDbCheck.innerHTML = resp
     } else {
         window.location.replace("http://org.localhost/afterRegister.html");
     }
@@ -240,8 +244,38 @@ async function sendData(e) {
             user_confirm_password: document.getElementById('confirm_password').value
         }
         const resp = await postData(data);
-        ApiComunnicatesHandler(resp);
+        console.log(resp);
+        ApiComunnicatesHandler(resp.message);
     }
 
 }
+
+function getCookie(cname) {
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function isLogged() {
+    const JWTCookie = getCookie("jwt");
+    console.log(JWTCookie);
+    if (JWTCookie) {
+        window.location.replace('http://org.localhost/index.html');
+    } else {
+
+    }
+}
+
+isLogged();
 submitButton.addEventListener('click', sendData);

@@ -19,11 +19,10 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 $db = new Database($config);
-$createDb = new CreateDB($db);
 $dv = new DataValidation();
 $dbdc = new DBDataCheck($db);
+$createDb = new CreateDB($db, $dbdc);
 $data = json_decode(file_get_contents("php://input"));
-
 if (
     !empty($data->USER_LOGIN && $data->USER_PASSWORD)
 ) {
@@ -38,12 +37,16 @@ if (
 
 
 
-if ($dbdc->paramDBexistCheck('USER_LOGIN', $dbdc->USER_LOGIN) && $dbdc->passwordCheck($dbdc->USER_LOGIN, $dbdc->USER_PASSWORD)) {
+
+
+if ($dbdc->paramDBexistCheck('USER_LOGIN', $dbdc->USER_LOGIN) && $dbdc->passwordCheck('USER_PASSWORD', 'USER_LOGIN', $dbdc->USER_LOGIN, $dbdc->USER_PASSWORD)) {
 
     $issued_at = time();
-    $expiration_time = $issued_at + (600 * 600);
+    $expiration_time = $issued_at + (60 * 60);
     $issuer = 'http://org.localhost/php/api/login.php';
     $key = "example_key";
+    $id = $dbdc->getParamFromDBv2("USER_ID", "USER_LOGIN", $dbdc->USER_LOGIN);
+
 
     $token = array(
         "iat" => $issued_at,
@@ -51,6 +54,7 @@ if ($dbdc->paramDBexistCheck('USER_LOGIN', $dbdc->USER_LOGIN) && $dbdc->password
         "iss" => $issuer,
         "data" => array(
             "user_login" => $dbdc->USER_LOGIN,
+            "user_id" => $id
         )
     );
 

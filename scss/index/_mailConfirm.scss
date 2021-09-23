@@ -1,0 +1,26 @@
+.mailValidInfo {
+    width: 100vw;
+    background-color: #111111;
+    display: block;
+    height: 90.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mailValidInfo p {
+    width: 40rem;
+    text-align: center;
+    color: white;
+    width: 60vw;
+    border: 0.5rem solid white;
+    height: 40.5vh;
+    font-family: 'MONTSERRAT', sans-serif;
+    font-size: 2rem;
+    @media only screen and (max-width: 700px) {
+        font-size: 1.5rem;
+    }
+    @media only screen and (max-width: 400px) {
+        font-size: 1rem;
+    }
+}

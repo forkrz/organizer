@@ -7,18 +7,6 @@
     background-color: #111111;
 }
 
-div.registerInformation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-p.registerInformation {
-    border: 0.3rem solid white;
-    width: 50rem;
-    color: white;
-}
-
 @media only screen and (max-width: 800px) {
     main {
         display: flex;

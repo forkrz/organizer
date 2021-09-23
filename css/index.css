@@ -496,24 +496,6 @@ body {
   background-color: #111111;
 }
 
-div.registerInformation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-p.registerInformation {
-  border: 0.3rem solid white;
-  width: 50rem;
-  color: white;
-}
-
 @media only screen and (max-width: 800px) {
   main {
     display: -webkit-box;
@@ -614,5 +596,222 @@ p.registerInformation {
 .box input[type="submit"]:hover {
   border-color: white;
   background-color: rgba(0, 100, 0, 0.685);
+}
+
+.mailValidInfo {
+  width: 100vw;
+  background-color: #111111;
+  display: block;
+  height: 90.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mailValidInfo p {
+  width: 40rem;
+  text-align: center;
+  color: white;
+  width: 60vw;
+  border: 0.5rem solid white;
+  height: 40.5vh;
+  font-family: 'MONTSERRAT', sans-serif;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .mailValidInfo p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .mailValidInfo p {
+    font-size: 1rem;
+  }
+}
+
+.registerInformation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 90.5vh;
+  background-color: #111111;
+}
+
+p.registerInformation {
+  text-align: center;
+  border: 0.3rem solid white;
+  width: 50rem;
+  color: white;
+  height: 40.5vh;
+  font-family: 'MONTSERRAT', sans-serif;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  p.registerInformation {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  p.registerInformation {
+    font-size: 1rem;
+  }
+}
+
+.userNotes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #111111;
+  width: 100%;
+}
+
+.addNote {
+  height: 49rem;
+  background-color: #111111;
+  width: 50vw;
+  border: 0.5rem solid white;
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.showNotes {
+  height: 49rem;
+  background-color: #111111;
+  width: 50vw;
+  border: 0.5rem solid white;
+  margin: 2rem;
+}
+
+.noteField.Title {
+  height: 2rem;
+  margin-bottom: 0rem;
+  margin-top: 1;
+}
+
+.noteField {
+  margin-top: 2rem;
+  width: 48rem;
+  height: 36rem;
+  resize: none;
+  background-color: rgba(243, 240, 237, 0.281);
+  color: white;
+  font-family: 'MONTSERRAT', sans-serif;
+}
+
+.AddNoteButton {
+  border: none;
+  background: none;
+  display: block;
+  text-align: center;
+  border: 2px solid gray;
+  padding: 14px 10px;
+  width: 10rem;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.AddNoteButton:hover {
+  border-color: white;
+  background-color: rgba(0, 100, 0, 0.685);
+}
+
+.searchForm {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin-top: 0.5rem;
+  height: 2rem;
+}
+
+.searchBar {
+  background-color: rgba(243, 240, 237, 0.281);
+  color: white;
+  width: 20rem;
+  border: 0.2rem solid white;
+}
+
+.buttonSearch {
+  margin-right: 1rem;
+  cursor: pointer;
+  border: 0.2rem solid white;
+  border-left: none;
+}
+
+.searchIcon {
+  color: white;
+  background-color: black;
+}
+
+.userNotes {
+  color: white;
+}
+
+td {
+  text-align: center;
+}
+
+tbody {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  width: 33%;
+}
+
+thead,
+tr {
+  width: 100%;
+}
+
+.div_table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+thead {
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

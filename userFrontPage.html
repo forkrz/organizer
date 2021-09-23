@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main page</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/index.css">
+
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="logo_container">
+                <h1>FORNAL<span>IZER</span></h1>
+            </div>
+            <ul class="navigation">
+                <li class="navigation_list_element first">
+                    <a href="index.html">
+                        <i class="material-icons nav_list">home</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id="logout">
+                    <a href="logout.html">
+                        <i class="material-icons nav_list">logout</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id="login">
+                    <a href="login.html">
+                        <i class="material-icons nav_list">login</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id='register'>
+                    <a href="register.html">
+                        <i class="material-icons nav_list">assignment_turned_in</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id='settings'>
+                    <a href="userUpdate.html">
+                        <i class="material-icons nav_list">settings</i>
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger">
+                <i class="material-icons hamburger_button">menu</i>
+            </button>
+        </header>
+        <main class="userNotes">
+            <div class="addNote">
+                <textarea class="noteField Title" id='noteFieldTitle' maxlength="32"> </textarea>
+                <textarea class="noteField Text" id='noteFieldText' maxlength="255"> </textarea>
+                <button class="AddNoteButton" type="button" id="AddNoteButton">Add Note
+                </button>
+            </div>
+            <div class="showNotes">
+                <form class="searchForm">
+                    <input type="search " class="searchBar " placeholder="Search... ">
+                    <button class="buttonSearch">
+                        <i class="material-icons searchIcon">search</i>
+                    </button>
+                </form>
+                <div class="div_table">
+                    <table class="userNotes">
+                        <thead class="header">
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Date of creation</th>
+                            <th></th>
+                        </thead>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+    </body>
+    <script src="js/addnote.js " type="module "></script>
+    <script src="js/hamburgerMenu.js " type="module "></script>
+
+    </html>

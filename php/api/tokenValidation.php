@@ -11,7 +11,6 @@ require __DIR__ . '/../../vendor/autoload.php';
 use Firebase\JWT\JWT;
 
 $data = json_decode(file_get_contents("php://input"));
-var_dump($data->jwt);
 
 $jwt = isset($data->jwt) ? $data->jwt : "";
 $key = "example_key";

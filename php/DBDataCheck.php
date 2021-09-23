@@ -25,35 +25,72 @@ class DBDataCheck
             return false;
         }
     }
-    private function getPasswordFromDB($login)
+    // private function getPasswordFromDB($login)
+    // {
+    //     $stmt = $this->db->con->prepare('SELECT USER_PASSWORD FROM users WHERE USER_LOGIN' . ' =?');
+    //     $stmt->bindParam(1, $login, PDO::FETCH_ASSOC);
+    //     $stmt->execute();
+    //     $row = $stmt;
+    //     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     return $row["USER_PASSWORD"];
+    // }
+
+    // public function getParamFromDB($param, $login)
+    // {
+    //     $stmt = $this->db->con->prepare('SELECT ' . $param . ' FROM users WHERE USER_LOGIN' . ' =?');
+    //     $stmt->bindParam(1, $login, PDO::FETCH_ASSOC);
+    //     $stmt->execute();
+    //     $row = $stmt;
+    //     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     return $row[$param];
+    // }
+
+    public function getParamFromDBv2($paramSelect, $paramWhere, $userInput)
     {
-        $stmt = $this->db->con->prepare('SELECT USER_PASSWORD FROM users WHERE USER_LOGIN' . ' =?');
-        $stmt->bindParam(1, $login, PDO::FETCH_ASSOC);
+        $stmt = $this->db->con->prepare('SELECT ' . $paramSelect . ' FROM users WHERE ' . $paramWhere . ' =?');
+        $stmt->bindParam(1, $userInput, PDO::FETCH_ASSOC);
         $stmt->execute();
-        $row = $stmt;
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $row["USER_PASSWORD"];
+        return $row[$paramSelect];
     }
 
-    public function getParamFromDB($param, $login)
+    public function passwordCheck($paramSelect, $paramWhere, $userInput, $user_passwsord)
     {
-        $stmt = $this->db->con->prepare('SELECT ' . $param . ' FROM users WHERE USER_LOGIN' . ' =?');
-        $stmt->bindParam(1, $login, PDO::FETCH_ASSOC);
-        $stmt->execute();
-        $row = $stmt;
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $row[$param];
+        $passwordDB = ($this->getParamFromDBv2($paramSelect, $paramWhere, $userInput));
+        return password_verify($user_passwsord, $passwordDB);
+    }
+    public function paramCheck($paramSelect, $paramWhere, $userInput, $inputTocheck)
+    {
+        $paramDB = $this->getParamFromDBv2($paramSelect, $paramWhere, $userInput);
+        return $paramDB == $inputTocheck;
     }
 
-    public function passwordCheck($login, $userPassword)
-    {
-        $passwordDB = ($this->getPasswordFromDB($login));
-        return password_verify($userPassword, $passwordDB);
-    }
-    public function paramCheck($param, $login, $userParam)
-    {
-        $paramDB = $this->getParamFromDB($param, $login);
 
-        return $paramDB == $userParam;
-    }
+
+
+    // private function getHashfromDB(string $hash)
+    // {
+    //     $stmt = $this->db->con->prepare('SELECT MAIL_HASH FROM users WHERE MAIL_HASH=?');
+    //     $stmt->bindParam(1, $hash, PDO::FETCH_ASSOC);
+    //     $stmt->execute();
+    //     $row = $stmt;
+    //     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     return $row['MAIL_HASH'];
+    // }
+
+    // private function doHashExistsInDB(string $hash)
+    // {
+    //     if (!empty($this->getHashfromDB($hash))) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+
+    // public function hashToDB(string $hash, string $login)
+    // {
+    //     $hash = md5(uniqid($login, true));
+    //     return $hash;
+    // }
 }

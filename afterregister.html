@@ -5,41 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main page</title>
+    <title>Success</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/index.css">
 
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="header">
-            <div class="inner_header">
-                <div class="logo_container">
-                    <h1>FORNAL<span>IZER</span></h1>
-                </div>
-                <ul class="navigation">
-                    <a href="index.html">
-                        <li><i class="material-icons">home</i> Home</li>
-                    </a>
-                    <a href="login.html">
-                        <li><i class="material-icons">login</i>Login</li>
-                    </a>
-                    <a href="register.html">
-                        <li><i class="material-icons">assignment_turned_in</i>Register</li>
-                    </a>
-                </ul>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main page</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/index.css">
+
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="logo_container">
+                <h1>FORNAL<span>IZER</span></h1>
             </div>
-        </div>
+            <ul class="navigation">
+                <li class="navigation_list_element first">
+                    <a href="index.html">
+                        <i class="material-icons nav_list">home</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id="logout">
+                    <a href="logout.html">
+                        <i class="material-icons nav_list">logout</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id="login">
+                    <a href="login.html">
+                        <i class="material-icons nav_list">login</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id='register'>
+                    <a href="register.html">
+                        <i class="material-icons nav_list">assignment_turned_in</i>
+                    </a>
+                </li>
+                <li class="navigation_list_element" id='settings'>
+                    <a href="register.html">
+                        <i class="material-icons nav_list">settings</i>
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger">
+                <i class="material-icons hamburger_button">menu</i>
+            </button>
+        </header>
         <div class="registerInformation">
-            <p class="registerInformation">Thank you for registration! The last step to access all possiblites of portal is to activate Your account to do so please click on activation mail that has been sent to your mail.
+            <p class="registerInformation">Thank you for registration! The last step to access all possiblites of portal is to activate Your account to do so please click on activation link that has been sent to your mail.
 
                 <br> You will be automaticly redirect in 5 seconds.
             </p>
             <!-- <meta http-equiv="refresh" content="3;url=index.html" /> -->
         </div>
-    </div>
+    </body>
+    <script src="js/hamburgerMenu.js"></script>
